@@ -1,4 +1,4 @@
-import {Component, Input, Output, EventEmitter} from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-event-thumbnail',
@@ -20,7 +20,7 @@ import {Component, Input, Output, EventEmitter} from '@angular/core';
     }
 
     .well div {
-      color: #bbb;
+      color: red;
     }
   `]
 })
