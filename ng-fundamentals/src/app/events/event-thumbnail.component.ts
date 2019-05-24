@@ -20,7 +20,7 @@ import {Component, Input} from '@angular/core';
     }
 
     .well div {
-      color: red;
+      color: #bbb;
     }
   `]
 })
