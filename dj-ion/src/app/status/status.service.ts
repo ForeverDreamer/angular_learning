@@ -3,6 +3,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
+import { Status } from './status';
+
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json'
@@ -24,8 +26,8 @@ export class StatusAPIService {
     return this.http.get(apiListEndpoiut);
   }
 
-  get(id: number): Observable<any> {
+  get(id: number): Observable<Status> {
     const apiDetailEndpoiut = `${this.baseUrl}status/${id}/`;
-    return this.http.get(apiDetailEndpoiut);
+    return this.http.get<Status>(apiDetailEndpoiut);
   }
 }

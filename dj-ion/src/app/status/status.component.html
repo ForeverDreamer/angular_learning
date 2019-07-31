@@ -1,7 +1,6 @@
-<ul *ngFor="let obj of results">
+<ul *ngFor="let statusItem of results">
   <li>
-    {{ obj.id }}
-    {{ obj.content }}
-    {{ obj.uri }}
+    <p>{{ statusItem.uri }}</p>
+    <p>{{ statusItem.user.username }}</p>
   </li>
 </ul>
