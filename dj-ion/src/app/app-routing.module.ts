@@ -1,7 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-const routes: Routes = [];
+import { StatusComponent } from './status/status.component';
+
+const routes: Routes = [
+  { path: '', redirectTo: '/status', pathMatch: 'full'},
+  { path: 'status', component: StatusComponent}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
