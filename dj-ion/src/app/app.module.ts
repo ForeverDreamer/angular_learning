@@ -9,13 +9,16 @@ import { StatusComponent } from './status/status.component';
 import { StatusDetailComponent } from './status-detail/status-detail.component';
 import { StatusCreateComponent } from './status-create/status-create.component';
 import { StatusAPIService } from './status/status.service';
+import { AuthComponent } from './auth/auth.component';
+import { AuthAPIService } from './auth/auth.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     StatusComponent,
     StatusDetailComponent,
-    StatusCreateComponent
+    StatusCreateComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +28,8 @@ import { StatusAPIService } from './status/status.service';
     HttpClientModule
   ],
   providers: [
-    StatusAPIService
+    StatusAPIService,
+    AuthAPIService
   ],
   bootstrap: [AppComponent]
 })
