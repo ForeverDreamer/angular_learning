@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
-import { catchError, map, tap } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+
+import { AuthLoginData } from './auth';
 
 
 const httpOptions = {
@@ -20,7 +21,7 @@ export class AuthAPIService {
   constructor(private http: HttpClient) {
   }
 
-  login(data: any): Observable<any> {
+  login(data: AuthLoginData): Observable<any> {
     const apiLoginEndpoiut = `${this.baseUrl}auth/`;
     return this.http.post(apiLoginEndpoiut, data, httpOptions);
   }

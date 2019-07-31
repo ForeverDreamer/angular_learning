@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+
 import { AuthAPIService } from './auth.service';
+import { AuthLoginData } from './auth';
 
 @Component({
   selector: 'app-auth',
@@ -12,9 +14,13 @@ export class AuthComponent implements OnInit {
   constructor(private authAPI: AuthAPIService) { }
 
   ngOnInit() {
-    const data = {username: 'admin', password: 'password123'}
-    this.authAPI.login(data).subscribe(data => {
-      this.authData = data;
+    const authLoginData = new AuthLoginData('admin', 'password123')
+    this.doLogin(authLoginData);
+  }
+
+  doLogin(authLoginData: AuthLoginData) {
+    this.authAPI.login(authLoginData).subscribe(resData => {
+      this.authData = resData;
     });
   }
 
