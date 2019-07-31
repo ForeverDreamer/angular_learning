@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { StatusComponent } from './status/status.component';
 import { StatusDetailComponent } from './status-detail/status-detail.component';
 import { StatusCreateComponent } from './status-create/status-create.component';
+import { StatusAPIService } from './status/status.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,9 @@ import { StatusCreateComponent } from './status-create/status-create.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    StatusAPIService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
