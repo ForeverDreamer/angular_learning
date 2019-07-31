@@ -23,4 +23,9 @@ export class StatusAPIService {
     const apiListEndpoiut = `${this.baseUrl}status/`;
     return this.http.get(apiListEndpoiut);
   }
+
+  get(id: number): Observable<any> {
+    const apiDetailEndpoiut = `${this.baseUrl}status/${id}/`;
+    return this.http.get(apiDetailEndpoiut);
+  }
 }
