@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { AuthAPIService } from './auth.service';
 import { AuthLoginData } from './auth';
+import { User } from './user';
 
 @Component({
   selector: 'app-auth',
@@ -9,7 +10,7 @@ import { AuthLoginData } from './auth';
   styleUrls: ['./auth.component.css']
 })
 export class AuthComponent implements OnInit {
-  authData: any;
+  userData: User;
 
   constructor(private authAPI: AuthAPIService) { }
 
@@ -20,7 +21,7 @@ export class AuthComponent implements OnInit {
 
   doLogin(authLoginData: AuthLoginData) {
     this.authAPI.login(authLoginData).subscribe(resData => {
-      this.authData = resData;
+      this.userData = resData as User;
     });
   }
 
