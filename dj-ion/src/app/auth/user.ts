@@ -1,8 +1,8 @@
 export class User {
-  token?: string;
-  user?: string;
-  expires?: string;  // convert to timestamp
-  id?: number;
-  username?: string;
-  uri?: string;
+  id: number;
+  username: string;
+  displayName: string;
+  uri: string;
+  token: string;
+  expires: string;  // convert to timestamp
 }
