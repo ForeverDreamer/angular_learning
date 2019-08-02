@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-servers',
+  // selector: '[app-servers]',
+  // selector: '.app-servers',
   template: `
     <h3>Using template</h3>
     <app-server></app-server>
